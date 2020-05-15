@@ -1,0 +1,45 @@
+Metrics/LineLength:
+  Max: 120
+Metrics/MethodLength:
+  Max: 15
+Metrics/AbcSize:
+  Max: 20
+Style/Documentation:
+  Enabled: false
+Bundler/OrderedGems:
+  Enabled: false
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+AllCops:
+  Exclude:
+    - bin/**/*
+    - node_modules/**/*
+Style/StringLiterals:
+  Exclude:
+    - config/spring.rb
+    - config/application.rb
+    - config/puma.rb
+    - config/environments/production.rb
+    - spec/rails_helper.rb
+Layout/SpaceInsideArrayLiteralBrackets:
+  Exclude:
+    - config/environments/production.rb
+Layout/EmptyLines:
+  Exclude:
+    - Gemfile
+Lint/UnusedBlockArgument:
+  Exclude:
+    - Gemfile
+Style/SymbolArray:
+  Exclude:
+    - Gemfile
+Style/BlockComments:
+  Exclude:
+    - spec/spec_helper.rb
+Metrics/BlockLength:
+  Exclude:
+    - spec/**/*
+Style/SymbolArray:
+  Exclude:
+    - ./**/*

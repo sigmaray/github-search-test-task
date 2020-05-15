@@ -16,5 +16,3 @@ RUN bundle install
 
 COPY package.json yarn.lock ./
 RUN yarn install --check-files
-
-

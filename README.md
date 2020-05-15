@@ -1,24 +1,52 @@
-# README
+# How to run project with Docker
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Start
+```
+docker-compose up
+```
 
-Things you may want to cover:
+Open http://localhost:3333 in browser
 
-* Ruby version
 
-* System dependencies
+## Testing
+```
+docker-compose run --rm web rspec
+```
 
-* Configuration
+## Linting
+```
+docker-compose run --rm web rubocop
+```
 
-* Database creation
+# How to run the application without Docker
+Install RVM (https://rvm.io/)
+```
+rvm install ruby-2.7.1
+bundle install
+rails server
+```
 
-* Database initialization
+# What was done
+* Exception handling and error messages
+* Unit tests
+* Functional tests
 
-* How to run the test suite
+# What was not done (didn't have enough time)
+* REST API and React SPA
+* i18n
+* Writing errors into log file
+* Github API credentials
+* Showing seconds until rate limit reset
+* Moving settings into `.env` file
 
-* Services (job queues, cache servers, search engines, etc.)
+# Notes
+Usually I use `simple_form` (instead of writing wrong html for forms) and `webpack` (to install bootstrap). In this project I don't use them for simplicity.
 
-* Deployment instructions
-
-* ...
+# Screenshots
+<img src="doc/screenshot1.png" alt="Screenshot" >
+<hr />
+<img src="doc/screenshot2.png" alt="Screenshot" />
+<hr />
+<img src="doc/screenshot3.png" alt="Screenshot" />
+<hr />
+<img src="doc/screenshot4.png" alt="Screenshot" />

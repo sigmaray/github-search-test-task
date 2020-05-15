@@ -1,0 +1,30 @@
+<div class="jumbotron mt-3 pt-4 pb-4" >
+  <form action="/" method="GET">
+    <div class="form-group">
+      <label for="q">Search Query</label>
+      <input type="text" class="form-control" placeholder="Search Query" name="q" value="<%= @q %>" />
+    </div>
+    <button type="submit" class="btn btn-primary">Search</button>
+  </form>
+</div>
+<% if @q.present? %>
+  <% if @error.present? %>
+    <%= bootstrap_alert(@error, 'error') %>
+  <% else %>
+    <% if @results.present? %>
+      <div class="mt-4 mb-4">
+        Showing search results for "<%= @q %>"
+      </div>
+      <% @results.each do |r| %>
+        <%= display_for r, class: 'mb-5' do |d| %>
+          <%= d.display :name %>
+          <%= d.display :html_url do |value| link_to(value, value, target: '_blank') end %>
+          <%= d.display :stargazers_count %>
+          <%= d.display :owner %>
+        <% end %>
+      <% end %> 
+    <% else %>
+      <%= bootstrap_alert("No results found for #{@q}", 'alert') %>
+    <% end%>
+  <% end %>
+<% end %>
